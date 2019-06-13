@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.rbkmoney</groupId>
     <artifactId>adapter-bank-payout-spring-boot-starter</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Adapter-bank-payout-spring-boot-starter</name>
@@ -14,7 +14,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>8</java.version>
-        <spring-boot.version>2.1.0.RELEASE</spring-boot.version>
+        <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
         <damsel-utils.version>2.1.9</damsel-utils.version>
         <damsel.version>1.256-2afe121</damsel.version>
         <serializer.version>0.6.7</serializer.version>
@@ -71,14 +71,13 @@
         <!--rbk-->
         <dependency>
             <groupId>com.rbkmoney</groupId>
-            <artifactId>error-mapping-java</artifactId>
-            <version>${error-mapping.version}</version>
-            <scope>provided</scope>
+            <artifactId>adapter-common-lib</artifactId>
+            <version>0.0.4-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.rbkmoney.woody</groupId>
-            <artifactId>woody-thrift</artifactId>
-            <version>1.1.15</version>
+            <groupId>com.rbkmoney</groupId>
+            <artifactId>error-mapping-java</artifactId>
+            <version>${error-mapping.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -86,22 +85,6 @@
             <artifactId>damsel</artifactId>
             <version>${damsel.version}</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.rbkmoney</groupId>
-            <artifactId>damsel-utils</artifactId>
-            <version>${damsel-utils.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.rbkmoney.geck</groupId>
-            <artifactId>serializer</artifactId>
-            <version>${serializer.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.rbkmoney.proxy-libs</groupId>
-            <artifactId>hellgate-adapter-client</artifactId>
-            <version>${hellgate-adapter-client.version}</version>
         </dependency>
 
         <!-- test -->
