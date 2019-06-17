@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.rbkmoney</groupId>
     <artifactId>adapter-bank-payout-spring-boot-starter</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.4-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Adapter-bank-payout-spring-boot-starter</name>
@@ -16,9 +16,8 @@
         <java.version>8</java.version>
         <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
         <damsel-utils.version>2.1.9</damsel-utils.version>
-        <damsel.version>1.256-2afe121</damsel.version>
+        <damsel.version>1.303-d99319c</damsel.version>
         <serializer.version>0.6.7</serializer.version>
-        <hellgate-adapter-client.version>2.1.9</hellgate-adapter-client.version>
         <error-mapping.version>1.0.2</error-mapping.version>
     </properties>
 
