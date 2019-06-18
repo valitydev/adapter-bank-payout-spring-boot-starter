@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class ExitStateModel {
-    private String errCode;
-    private String errMessage;
+    private String errorCode;
+    private String errorMessage;
     private AdapterState nextState;
 
     private EntryStateModel entryStateModel;
