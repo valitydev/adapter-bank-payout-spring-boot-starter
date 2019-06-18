@@ -1,4 +1,4 @@
-package com.rbkmoney.adapter.bank.payout.spring.boot.starter.config;
+package com.rbkmoney.adapter.bank.payout.spring.boot.starter.config.properties;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rbkmoney.adapter.common.mapper.SimpleErrorMapping;
@@ -13,7 +13,7 @@ import java.io.IOException;
 
 
 @Configuration
-public class AppConfig {
+public class ErrorMappingProperties {
 
     @Value("${error-mapping.file}")
     private Resource errorMappingFilePath;
@@ -25,11 +25,4 @@ public class AppConfig {
     public ErrorMapping errorMapping() throws IOException {
         return new SimpleErrorMapping(errorMappingFilePath, errorMappingPattern).getErrorMapping();
     }
-
-    @Bean
-    public ObjectMapper objectMapper(){
-        return new SimpleObjectMapper().getSimpleObjectMapper();
-    }
-
-
 }

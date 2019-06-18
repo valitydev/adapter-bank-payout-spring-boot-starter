@@ -1,6 +1,5 @@
 ---
 time.config:
-  redirectTimeout: 600
   maxTimePolling: 600
   pollingDelay: 10
 ---
