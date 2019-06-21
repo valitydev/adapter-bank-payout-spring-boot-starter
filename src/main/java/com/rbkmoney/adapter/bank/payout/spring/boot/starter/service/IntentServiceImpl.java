@@ -27,7 +27,10 @@ public class IntentServiceImpl implements IntentService {
     }
 
     public Intent getSuccess(ExitStateModel exitStateModel) {
-        return Intent.finish(new FinishIntent(FinishStatus.success(new Success(new TransactionInfo().setId(exitStateModel.getNextState().getTrxInfo().getTrxId())))));
+        com.rbkmoney.adapter.bank.payout.spring.boot.starter.model.TransactionInfo trxInfo = exitStateModel.getNextState().getTrxInfo();
+        return Intent.finish(new FinishIntent(FinishStatus.success(new Success(new TransactionInfo()
+                .setId(trxInfo.getTrxId())
+                .setExtra(trxInfo.getTrxExtra())))));
     }
 
     public Intent getSleep(ExitStateModel exitStateModel) {
