@@ -22,8 +22,12 @@ public class IntentServiceImpl implements IntentService {
     private final ErrorMapping errorMapping;
     private final TimerProperties timerProperties;
 
-    public Intent getFailure(ExitStateModel exitStateModel) {
-        return Intent.finish(new FinishIntent(FinishStatus.failure(errorMapping.getFailureByCodeAndDescription(exitStateModel.getErrorCode(), exitStateModel.getErrorMessage()))));
+    public Intent getFailureByCode(ExitStateModel exitStateModel) {
+        return Intent.finish(new FinishIntent(FinishStatus.failure(errorMapping.mapFailure(exitStateModel.getErrorCode()))));
+    }
+
+    public Intent getFailureByCodeAndDesc(ExitStateModel exitStateModel) {
+        return Intent.finish(new FinishIntent(FinishStatus.failure(errorMapping.mapFailure(exitStateModel.getErrorCode(), exitStateModel.getErrorMessage()))));
     }
 
     public Intent getSuccess(ExitStateModel exitStateModel) {
