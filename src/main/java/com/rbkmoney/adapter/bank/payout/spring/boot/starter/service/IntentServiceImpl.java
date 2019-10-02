@@ -4,7 +4,6 @@ import com.rbkmoney.adapter.bank.payout.spring.boot.starter.config.properties.Ti
 import com.rbkmoney.adapter.bank.payout.spring.boot.starter.model.EntryStateModel;
 import com.rbkmoney.adapter.bank.payout.spring.boot.starter.model.ExitStateModel;
 import com.rbkmoney.damsel.base.Timer;
-import com.rbkmoney.damsel.domain.Failure;
 import com.rbkmoney.damsel.domain.TransactionInfo;
 import com.rbkmoney.damsel.withdrawals.provider_adapter.*;
 import com.rbkmoney.error.mapping.ErrorMapping;
@@ -42,9 +41,9 @@ public class IntentServiceImpl implements IntentService {
             throw new IllegalArgumentException("Need to specify 'maxTimePoolingMillis' before sleep");
         }
         if (exitStateModel.getNextState().getMaxTimePoolingMillis() < Instant.now().toEpochMilli()) {
-            final Failure failure = new Failure("Sleep timeout");
-            failure.setReason("Max time pool limit reached");
-            return Intent.finish(new FinishIntent(FinishStatus.failure(failure)));
+            String code = "Sleep timeout";
+            String reason = "Max time pool limit reached";
+            return Intent.finish(new FinishIntent(FinishStatus.failure(errorMapping.mapFailure(code, reason))));
         }
 
         int timerPollingDelay = OptionsExtractors.extractPollingDelay(exitStateModel.getEntryStateModel().getOptions(), timerProperties.getPollingDelay());
