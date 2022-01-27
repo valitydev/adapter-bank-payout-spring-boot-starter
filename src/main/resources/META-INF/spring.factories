@@ -1,5 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.rbkmoney.adapter.bank.payout.spring.boot.starter.config.properties.ErrorMappingProperties,\
-com.rbkmoney.adapter.bank.payout.spring.boot.starter.config.properties.AdapterProperties,\
-com.rbkmoney.adapter.bank.payout.spring.boot.starter.config.properties.TimerProperties
+dev.vality.adapter.bank.payout.spring.boot.starter.config.properties.ErrorMappingProperties,\
+dev.vality.adapter.bank.payout.spring.boot.starter.config.properties.AdapterProperties,\
+dev.vality.adapter.bank.payout.spring.boot.starter.config.properties.TimerProperties
 
