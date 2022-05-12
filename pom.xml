@@ -46,7 +46,7 @@
         <damsel.version>1.544-dcd92dd</damsel.version>
         <cds-proto.version>1.66-01353ce</cds-proto.version>
 
-        <spring-boot.version>2.3.8.RELEASE</spring-boot.version>
+        <spring-boot.version>2.5.12</spring-boot.version>
         <woody.version>1.0.4</woody.version>
         <geck.version>0.0.1</geck.version>
         <lombok.version>1.18.22</lombok.version>
