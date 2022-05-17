@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>adapter-bank-payout-spring-boot-starter</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>Adapter-bank-payout-spring-boot-starter</name>
@@ -39,22 +39,15 @@
     </scm>
 
     <properties>
-        <adapter-client-lib.version>1.0.1</adapter-client-lib.version>
-        <adapter-thrift-lib.version>1.0.0</adapter-thrift-lib.version>
-        <adapter-common-lib.version>1.0.0</adapter-common-lib.version>
-
-        <damsel.version>1.544-dcd92dd</damsel.version>
+        <damsel.version>1.563-d384c12</damsel.version>
         <cds-proto.version>1.66-01353ce</cds-proto.version>
-
-        <spring-boot.version>2.3.8.RELEASE</spring-boot.version>
+        <spring-boot.version>2.6.7</spring-boot.version>
         <woody.version>1.0.4</woody.version>
         <geck.version>0.0.1</geck.version>
-        <lombok.version>1.18.22</lombok.version>
-        <slf4j-api.version>1.7.30</slf4j-api.version>
+        <lombok.version>1.18.24</lombok.version>
+        <slf4j-api.version>1.7.36</slf4j-api.version>
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
-        <hibernate-validator.version>6.1.5.Final</hibernate-validator.version>
-        <error-mapping-java.version>1.0.0</error-mapping-java.version>
-        <junit.version>4.12</junit.version>
+        <adapter-common-lib.version>1.1.1</adapter-common-lib.version>
     </properties>
 
     <dependencies>
@@ -76,11 +69,6 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>${hibernate-validator.version}</version>
         </dependency>
 
         <!--spring-->
@@ -105,7 +93,22 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${spring-boot.version}</version>
-            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-validator</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring-boot.version}</version>
         </dependency>
 
         <!--vality-->
@@ -113,17 +116,6 @@
             <groupId>dev.vality.woody</groupId>
             <artifactId>woody-thrift</artifactId>
             <version>${woody.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>dev.vality</groupId>
-            <artifactId>adapter-common-lib</artifactId>
-            <version>${adapter-common-lib.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>dev.vality</groupId>
-            <artifactId>error-mapping-java</artifactId>
-            <version>${error-mapping-java.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -138,14 +130,28 @@
             <version>${damsel.version}</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>dev.vality</groupId>
+            <artifactId>adapter-common-lib</artifactId>
+            <version>${adapter-common-lib.version}</version>
+        </dependency>
 
         <!-- test -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
 

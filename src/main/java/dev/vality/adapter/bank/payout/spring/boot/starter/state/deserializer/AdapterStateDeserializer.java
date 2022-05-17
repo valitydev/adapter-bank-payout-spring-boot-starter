@@ -1,9 +1,8 @@
 package dev.vality.adapter.bank.payout.spring.boot.starter.state.deserializer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dev.vality.adapter.bank.payout.spring.boot.starter.exception.DeserializationException;
 import dev.vality.adapter.bank.payout.spring.boot.starter.model.AdapterState;
-import dev.vality.adapter.common.state.deserializer.DeserializationException;
-import dev.vality.adapter.common.state.deserializer.Deserializer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

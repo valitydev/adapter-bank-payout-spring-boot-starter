@@ -3,21 +3,20 @@ package dev.vality.adapter.bank.payout.spring.boot.starter.service;
 import dev.vality.adapter.bank.payout.spring.boot.starter.config.properties.TimerProperties;
 import dev.vality.adapter.bank.payout.spring.boot.starter.model.EntryStateModel;
 import dev.vality.adapter.bank.payout.spring.boot.starter.model.ExitStateModel;
-import dev.vality.adapter.common.model.PollingInfo;
-import dev.vality.adapter.common.utils.times.ExponentialBackOffPollingService;
+import dev.vality.adapter.bank.payout.spring.boot.starter.model.PollingInfo;
+import dev.vality.adapter.common.damsel.WithdrawalsProviderAdapterPackageCreators;
+import dev.vality.adapter.common.mapper.ErrorMapping;
 import dev.vality.damsel.domain.TransactionInfo;
 import dev.vality.damsel.withdrawals.provider_adapter.FinishIntent;
 import dev.vality.damsel.withdrawals.provider_adapter.FinishStatus;
 import dev.vality.damsel.withdrawals.provider_adapter.Intent;
 import dev.vality.damsel.withdrawals.provider_adapter.Success;
-import dev.vality.error.mapping.ErrorMapping;
-import dev.vality.java.damsel.utils.creators.WithdrawalsProviderAdapterPackageCreators;
 import lombok.RequiredArgsConstructor;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
-import static dev.vality.java.damsel.utils.extractors.OptionsExtractors.extractMaxTimePolling;
+import static dev.vality.adapter.common.damsel.OptionsExtractors.extractMaxTimePolling;
 
 @RequiredArgsConstructor
 public class IntentServiceImpl implements IntentService {

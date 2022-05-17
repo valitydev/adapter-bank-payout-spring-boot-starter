@@ -1,21 +1,14 @@
 package dev.vality.adapter.bank.payout.spring.boot.starter.service;
 
 import dev.vality.damsel.msgpack.Value;
-import dev.vality.damsel.withdrawals.provider_adapter.AdapterSrv;
-import dev.vality.damsel.withdrawals.provider_adapter.Callback;
-import dev.vality.damsel.withdrawals.provider_adapter.CallbackResult;
-import dev.vality.damsel.withdrawals.provider_adapter.GetQuoteFailure;
-import dev.vality.damsel.withdrawals.provider_adapter.GetQuoteParams;
-import dev.vality.damsel.withdrawals.provider_adapter.ProcessResult;
-import dev.vality.damsel.withdrawals.provider_adapter.Quote;
-import dev.vality.damsel.withdrawals.provider_adapter.Withdrawal;
+import dev.vality.damsel.withdrawals.provider_adapter.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.thrift.TException;
 
 import java.util.Map;
 
-import static dev.vality.java.damsel.utils.verification.ProxyProviderVerification.isUndefinedResultOrUnavailable;
+import static dev.vality.adapter.common.damsel.ProxyProviderVerification.isUndefinedResultOrUnavailable;
 
 @Slf4j
 @RequiredArgsConstructor
