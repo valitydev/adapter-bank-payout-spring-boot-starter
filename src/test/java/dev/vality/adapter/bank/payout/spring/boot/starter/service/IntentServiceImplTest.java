@@ -5,12 +5,11 @@ import dev.vality.adapter.bank.payout.spring.boot.starter.config.properties.Time
 import dev.vality.adapter.bank.payout.spring.boot.starter.model.AdapterState;
 import dev.vality.adapter.bank.payout.spring.boot.starter.model.EntryStateModel;
 import dev.vality.adapter.bank.payout.spring.boot.starter.model.ExitStateModel;
-import dev.vality.adapter.common.mapper.SimpleObjectMapper;
-import dev.vality.adapter.common.model.PollingInfo;
+import dev.vality.adapter.bank.payout.spring.boot.starter.model.PollingInfo;
+import dev.vality.adapter.common.mapper.ErrorMapping;
 import dev.vality.damsel.withdrawals.provider_adapter.Intent;
-import dev.vality.error.mapping.ErrorMapping;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,7 +19,8 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class IntentServiceImplTest {
 
@@ -29,7 +29,7 @@ public class IntentServiceImplTest {
 
     private IntentServiceImpl intentService;
 
-    @Before
+    @BeforeEach
     public void setUp() throws IOException {
         intentService = new IntentServiceImpl(prepareErrorMapping(), prepareTimerProperties());
     }
@@ -61,21 +61,20 @@ public class IntentServiceImplTest {
         assertTrue(intent.getFinish().getStatus().isSetFailure());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void getSleepException() {
         ExitStateModel exitStateModel = new ExitStateModel();
         AdapterState adapterState = new AdapterState();
         adapterState.setPollingInfo(new PollingInfo());
         exitStateModel.setNextState(adapterState);
-        intentService.getSleep(exitStateModel);
+        assertThrows(IllegalArgumentException.class, () -> intentService.getSleep(exitStateModel));
     }
 
     private ErrorMapping prepareErrorMapping() throws IOException {
-        ObjectMapper mapper = new SimpleObjectMapper().createSimpleObjectMapperFactory();
+        ObjectMapper mapper = new ObjectMapper();
         File file = new File(ERROR_MAPPING_FILE_PATH);
         InputStream is = new FileInputStream(file);
         ErrorMapping errorMapping = new ErrorMapping(is, ERROR_MAPPING_PATTERN, mapper);
-        errorMapping.validateMapping();
         return errorMapping;
     }
 
@@ -85,5 +84,4 @@ public class IntentServiceImplTest {
         timerProperties.setPollingDelay(10);
         return timerProperties;
     }
-
 }
