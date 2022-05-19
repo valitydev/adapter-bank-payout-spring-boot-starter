@@ -14,7 +14,7 @@ import java.util.Base64;
 @AllArgsConstructor
 public abstract class StateSerializer<T> implements Serializer<T> {
 
-    protected final ObjectMapper mapper;
+    private final ObjectMapper mapper;
 
     @Override
     public byte[] writeByte(Object obj) {

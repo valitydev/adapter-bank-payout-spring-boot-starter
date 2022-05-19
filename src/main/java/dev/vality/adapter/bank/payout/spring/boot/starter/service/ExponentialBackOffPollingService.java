@@ -25,7 +25,7 @@ public class ExponentialBackOffPollingService<T extends PollingInfo> {
         Long startTime = pollingInfo.getStartDateTimePolling() != null
                 ? pollingInfo.getStartDateTimePolling().toEpochMilli()
                 : currentLocalTime;
-        Integer exponential = TimeOptionsExtractors.extractExponent(options, ExponentialBackOff.DEFAULT_MUTIPLIER);
+        Integer exponential = TimeOptionsExtractors.extractExponent(options, ExponentialBackOff.DEFAULT_MULTIPLIER);
         Integer defaultInitialExponential = TimeOptionsExtractors.extractDefaultInitialExponential(options,
                 ExponentialBackOff.DEFAULT_INITIAL_INTERVAL);
         Integer maxTimeBackOff =
