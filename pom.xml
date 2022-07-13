@@ -39,15 +39,15 @@
     </scm>
 
     <properties>
-        <damsel.version>1.563-d384c12</damsel.version>
+        <damsel.version>1.568-9362c08</damsel.version>
         <cds-proto.version>1.66-01353ce</cds-proto.version>
-        <spring-boot.version>2.6.7</spring-boot.version>
+        <spring-boot.version>2.7.1</spring-boot.version>
         <woody.version>1.0.4</woody.version>
         <geck.version>0.0.1</geck.version>
         <lombok.version>1.18.24</lombok.version>
         <slf4j-api.version>1.7.36</slf4j-api.version>
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
-        <adapter-common-lib.version>1.1.1</adapter-common-lib.version>
+        <adapter-common-lib.version>1.1.2</adapter-common-lib.version>
     </properties>
 
     <dependencies>
