@@ -40,7 +40,7 @@
 
     <properties>
         <damsel.version>1.563-d384c12</damsel.version>
-        <spring-boot.version>2.7.0</spring-boot.version>
+        <spring-boot.version>2.7.12</spring-boot.version>
     </properties>
 
     <dependencies>
