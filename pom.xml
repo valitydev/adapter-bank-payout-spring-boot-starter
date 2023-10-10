@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>adapter-bank-payout-spring-boot-starter</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <packaging>jar</packaging>
 
     <name>Adapter-bank-payout-spring-boot-starter</name>
@@ -39,8 +39,8 @@
     </scm>
 
     <properties>
-        <damsel.version>1.597-bfedcb9</damsel.version>
-        <spring-boot.version>2.7.12</spring-boot.version>
+        <damsel.version>1.606-f718741</damsel.version>
+        <spring-boot.version>2.7.16</spring-boot.version>
     </properties>
 
     <dependencies>
@@ -60,7 +60,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.28</version>
+            <version>1.18.30</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -114,7 +114,7 @@
         <dependency>
             <groupId>dev.vality</groupId>
             <artifactId>adapter-common-lib</artifactId>
-            <version>1.2.10</version>
+            <version>1.2.13</version>
         </dependency>
         <dependency>
             <groupId>dev.vality.woody</groupId>
