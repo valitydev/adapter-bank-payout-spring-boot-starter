@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>adapter-bank-payout-spring-boot-starter</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <packaging>jar</packaging>
 
     <name>Adapter-bank-payout-spring-boot-starter</name>
@@ -39,7 +39,7 @@
     </scm>
 
     <properties>
-        <damsel.version>1.597-bfedcb9</damsel.version>
+        <damsel.version>1.625-108eb44</damsel.version>
         <spring-boot.version>2.7.12</spring-boot.version>
     </properties>
 
