@@ -22,7 +22,7 @@ import java.util.HashMap;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class IntentServiceImplTest {
+class IntentServiceImplTest {
 
     private static final String ERROR_MAPPING_FILE_PATH = "src/test/resources/fixture/errors.json";
     private static final String ERROR_MAPPING_PATTERN = "'%s' - '%s'";
@@ -35,7 +35,7 @@ public class IntentServiceImplTest {
     }
 
     @Test
-    public void getSleepIntentSuccess() {
+    void getSleepIntentSuccess() {
         ExitStateModel exitStateModel = new ExitStateModel();
         EntryStateModel entryStateModel = new EntryStateModel();
         entryStateModel.setOptions(new HashMap<>());
@@ -50,7 +50,7 @@ public class IntentServiceImplTest {
     }
 
     @Test
-    public void getSleepIntentFailure() {
+    void getSleepIntentFailure() {
         ExitStateModel exitStateModel = new ExitStateModel();
         AdapterState adapterState = new AdapterState();
         PollingInfo pollingInfo = new PollingInfo();
@@ -62,7 +62,7 @@ public class IntentServiceImplTest {
     }
 
     @Test
-    public void getSleepException() {
+    void getSleepException() {
         ExitStateModel exitStateModel = new ExitStateModel();
         AdapterState adapterState = new AdapterState();
         adapterState.setPollingInfo(new PollingInfo());
