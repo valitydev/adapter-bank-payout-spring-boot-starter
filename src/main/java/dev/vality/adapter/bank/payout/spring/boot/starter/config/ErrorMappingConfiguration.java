@@ -12,10 +12,10 @@ import java.io.IOException;
 @Configuration
 public class ErrorMappingConfiguration {
 
-    @Value("${error-mapping.filePath}")
+    @Value("${error-mapping.file}")
     private Resource errorMappingFilePath;
 
-    @Value("${error-mapping.pattern:\"'%s' - '%s'\"}")
+    @Value("${error-mapping.patternReason:\"'%s' - '%s'\"}")
     private String errorMappingPattern;
 
     @Bean
