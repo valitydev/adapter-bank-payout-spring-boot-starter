@@ -1,0 +1,5 @@
+dev.vality.adapter.bank.payout.spring.boot.starter.config.ErrorMappingConfiguration
+dev.vality.adapter.bank.payout.spring.boot.starter.config.RequestLoggingAspectConfiguration
+dev.vality.adapter.bank.payout.spring.boot.starter.config.SimpleObjectMapperConfiguration
+dev.vality.adapter.bank.payout.spring.boot.starter.config.properties.AdapterProperties
+dev.vality.adapter.bank.payout.spring.boot.starter.config.properties.TimerProperties
