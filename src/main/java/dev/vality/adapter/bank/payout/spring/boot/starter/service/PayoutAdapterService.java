@@ -56,8 +56,7 @@ public class PayoutAdapterService<T extends EntryStateModel, X extends ExitState
     }
 
     @Override
-    public CallbackResult handleCallback(Callback callback, Withdrawal withdrawal, Value value, Map<String, String> map)
-            throws TException {
+    public CallbackResult handleCallback(Callback callback, Withdrawal withdrawal, Value value, Map<String, String> map) {
         return handleCallbackHandler.handleCallback(callback, withdrawal, value, map);
     }
 }

@@ -1,7 +1,7 @@
 package dev.vality.adapter.bank.payout.spring.boot.starter.config;
 
 import dev.vality.adapter.common.component.SimpleErrorMapping;
-import dev.vality.adapter.common.mapper.ErrorMapping;
+import dev.vality.adapter.common.v2.mapper.ErrorMapping;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
