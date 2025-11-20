@@ -6,7 +6,7 @@ import dev.vality.adapter.bank.payout.spring.boot.starter.model.AdapterState;
 import dev.vality.adapter.bank.payout.spring.boot.starter.model.EntryStateModel;
 import dev.vality.adapter.bank.payout.spring.boot.starter.model.ExitStateModel;
 import dev.vality.adapter.bank.payout.spring.boot.starter.model.PollingInfo;
-import dev.vality.adapter.common.mapper.ErrorMapping;
+import dev.vality.adapter.common.v2.mapper.ErrorMapping;
 import dev.vality.damsel.withdrawals.provider_adapter.Intent;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

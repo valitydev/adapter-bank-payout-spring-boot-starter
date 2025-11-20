@@ -6,12 +6,12 @@
     <parent>
         <groupId>dev.vality</groupId>
         <artifactId>library-parent-pom</artifactId>
-        <version>2.0.3</version>
+        <version>3.1.0</version>
         <relativePath/>
     </parent>
 
     <artifactId>adapter-bank-payout-spring-boot-starter</artifactId>
-    <version>2.0.1</version>
+    <version>3.0.1</version>
     <packaging>jar</packaging>
 
     <name>Adapter-bank-payout-spring-boot-starter</name>
@@ -39,8 +39,9 @@
     </scm>
 
     <properties>
-        <damsel.version>1.611-958e5f0</damsel.version>
+        <damsel.version>1.674-368f05b</damsel.version>
         <spring-boot.version>3.2.3</spring-boot.version>
+        <jackson.version>2.15.4</jackson.version>
     </properties>
 
     <dependencies>
@@ -114,19 +115,33 @@
         <dependency>
             <groupId>dev.vality</groupId>
             <artifactId>adapter-common-lib</artifactId>
-            <version>1.2.13</version>
+            <version>3.1.1</version>
         </dependency>
         <dependency>
             <groupId>dev.vality.woody</groupId>
             <artifactId>woody-thrift</artifactId>
-            <version>2.0.0</version>
-            <scope>provided</scope>
+            <version>2.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>dev.vality.woody</groupId>
+            <artifactId>woody-api</artifactId>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>dev.vality.geck</groupId>
             <artifactId>serializer</artifactId>
             <version>0.0.1</version>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>dev.vality</groupId>

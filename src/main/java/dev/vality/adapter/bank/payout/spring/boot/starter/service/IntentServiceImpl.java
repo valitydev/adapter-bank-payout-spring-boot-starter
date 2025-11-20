@@ -5,7 +5,7 @@ import dev.vality.adapter.bank.payout.spring.boot.starter.model.EntryStateModel;
 import dev.vality.adapter.bank.payout.spring.boot.starter.model.ExitStateModel;
 import dev.vality.adapter.bank.payout.spring.boot.starter.model.PollingInfo;
 import dev.vality.adapter.common.damsel.WithdrawalsProviderAdapterPackageCreators;
-import dev.vality.adapter.common.mapper.ErrorMapping;
+import dev.vality.adapter.common.v2.mapper.ErrorMapping;
 import dev.vality.damsel.domain.TransactionInfo;
 import dev.vality.damsel.withdrawals.provider_adapter.FinishIntent;
 import dev.vality.damsel.withdrawals.provider_adapter.FinishStatus;
